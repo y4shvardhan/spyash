@@ -1,0 +1,424 @@
+{% extends "base.html" %}
+
+{% block title %}
+MotorNation — New Cars, Reviews & Comparisons
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <p class="eyebrow">
+            NEW CARS · REVIEWS · COMPARISONS
+        </p>
+
+        <h1>
+            Find the right car
+            <span>for you.</span>
+        </h1>
+
+        <p class="hero-text">
+            Research new cars, compare specifications,
+            explore reviews and discover your next vehicle.
+        </p>
+
+        <form
+            class="search-box"
+            method="GET"
+            action="{{ url_for('cars') }}"
+        >
+
+            <input
+                type="text"
+                name="q"
+                placeholder="Search by make or model..."
+                autocomplete="off"
+                aria-label="Search cars by make or model"
+            >
+
+            <button type="submit">
+                Search Cars
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURED CARS
+========================================================= -->
+
+<section
+    class="section featured-section"
+    id="new-cars"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    FEATURED CARS
+                </span>
+
+                <h2>
+                    Top Picks This Month
+                </h2>
+
+                <p class="section-description">
+                    Explore some of the vehicles currently
+                    featured across MotorNation.
+                </p>
+
+            </div>
+
+            <a
+                href="{{ url_for('cars') }}"
+                class="section-link"
+            >
+                View All Cars →
+            </a>
+
+        </div>
+
+        <div
+            class="car-grid"
+            id="featured-cars"
+        ></div>
+
+        <div
+            class="section-empty"
+            id="featured-empty"
+            hidden
+        >
+            <p>
+                Featured vehicles will appear here soon.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     REVIEWS & INSIGHTS
+========================================================= -->
+
+<section
+    class="section reviews-section"
+    id="reviews"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    MOTOR NATION REVIEWS
+                </span>
+
+                <h2>
+                    Reviews & Insights
+                </h2>
+
+                <p class="section-description">
+                    Get a closer look at cars, their strengths,
+                    weaknesses and everyday practicality.
+                </p>
+
+            </div>
+
+            <a
+                href="{{ url_for('reviews') }}"
+                class="section-link"
+            >
+                View All Reviews →
+            </a>
+
+        </div>
+
+
+        <!--
+            IMPORTANT:
+            These cards are now generated from the
+            live SQLite vehicle database.
+        -->
+
+        <div
+            class="reviews-grid"
+            id="home-reviews"
+        ></div>
+
+
+        <div
+            class="section-empty"
+            id="reviews-empty"
+            hidden
+        >
+            <p>
+                Reviews will appear here once vehicle data
+                is available.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     COMPARE
+========================================================= -->
+
+<section
+    class="dark-section"
+    id="compare"
+>
+
+    <div class="container">
+
+        <span class="eyebrow">
+            MOTOR NATION
+        </span>
+
+        <h2>
+            Compare cars with confidence.
+        </h2>
+
+        <p>
+            Compare prices, performance, features and
+            specifications in one place.
+        </p>
+
+        <a
+            href="{{ url_for('compare') }}"
+            class="primary-btn"
+        >
+            Start Comparing
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     AUTOMOTIVE NEWS PREVIEW
+========================================================= -->
+
+<section
+    class="section news-section"
+    id="news"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    AUTOMOTIVE NEWS
+                </span>
+
+                <h2>
+                    What's Happening in Cars
+                </h2>
+
+                <p class="section-description">
+                    Follow the latest trends across new cars,
+                    performance, technology and electrification.
+                </p>
+
+            </div>
+
+            <a
+                href="{{ url_for('news') }}"
+                class="section-link"
+            >
+                View All News →
+            </a>
+
+        </div>
+
+
+        <div class="news-grid">
+
+            <article class="news-card">
+
+                <span class="news-number">
+                    01
+                </span>
+
+                <span class="news-category">
+                    NEW CARS
+                </span>
+
+                <h3>
+                    The next generation of modern vehicles
+                </h3>
+
+                <p>
+                    Discover how new vehicle designs are changing
+                    the way drivers research and buy cars.
+                </p>
+
+                <a
+                    href="{{ url_for('news') }}"
+                    class="news-link"
+                >
+                    Read More →
+                </a>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <span class="news-number">
+                    02
+                </span>
+
+                <span class="news-category">
+                    TECHNOLOGY
+                </span>
+
+                <h3>
+                    Smarter technology inside today's cars
+                </h3>
+
+                <p>
+                    From connected features to advanced driver
+                    technology, automotive innovation continues
+                    to evolve.
+                </p>
+
+                <a
+                    href="{{ url_for('news') }}"
+                    class="news-link"
+                >
+                    Read More →
+                </a>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <span class="news-number">
+                    03
+                </span>
+
+                <span class="news-category">
+                    ELECTRIC
+                </span>
+
+                <h3>
+                    The continued growth of EVs
+                </h3>
+
+                <p>
+                    Explore electric vehicles and understand
+                    the features that matter for everyday driving.
+                </p>
+
+                <a
+                    href="{{ url_for('news') }}"
+                    class="news-link"
+                >
+                    Read More →
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ELECTRIC VEHICLES
+========================================================= -->
+
+<section
+    class="ev-section"
+    id="ev"
+>
+
+    <div class="container">
+
+        <div class="ev-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    ELECTRIC VEHICLES
+                </span>
+
+                <h2>
+                    Explore Electric Vehicles.
+                </h2>
+
+                <p>
+                    Discover electric vehicles and compare
+                    performance, pricing and everyday practicality.
+                </p>
+
+            </div>
+
+            <a
+                href="{{ url_for('cars') }}?fuelType=Electric"
+                class="primary-btn"
+            >
+                View All EVs →
+            </a>
+
+        </div>
+
+
+        <div
+            class="ev-car-grid"
+            id="ev-cars"
+        ></div>
+
+        <div
+            class="section-empty"
+            id="ev-empty"
+            hidden
+        >
+            <p>
+                Electric vehicles will appear here once
+                vehicle data is available.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     HOME PAGE JAVASCRIPT
+========================================================= -->
+
+<script
+    src="{{ url_for('static', filename='js/home.js') }}"
+></script>
+
+{% endblock %}

@@ -1,0 +1,203 @@
+```html
+{% extends "base.html" %}
+
+{% block title %}
+MotorNation — News
+{% endblock %}
+
+{% block content %}
+
+<section class="news-page">
+
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="page-header">
+
+            <span class="eyebrow">
+                MOTOR NATION NEWS
+            </span>
+
+            <h1>
+                Automotive News
+            </h1>
+
+            <p>
+                Stay updated with the latest automotive news,
+                new vehicle launches, industry developments,
+                electric vehicles and automotive technology.
+            </p>
+
+        </div>
+
+
+        <!-- Featured News -->
+        <section class="news-intro">
+
+            <div class="news-intro-content">
+
+                <h2>
+                    Stay Ahead of the Road
+                </h2>
+
+                <p>
+                    MotorNation News will bring together important
+                    developments from the automotive world, helping
+                    you stay informed about new cars, technology,
+                    manufacturers and the future of mobility.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- News Categories -->
+        <section class="news-categories">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        News Categories
+                    </h2>
+                </div>
+
+                <a
+                    href="{{ url_for('cars') }}"
+                    class="section-link"
+                >
+                    Explore Cars →
+                </a>
+
+            </div>
+
+
+            <div class="news-category-grid">
+
+                <!-- New Cars -->
+                <article class="news-category-card">
+
+                    <div class="news-category-icon">
+                        🚘
+                    </div>
+
+                    <h3>
+                        New Cars
+                    </h3>
+
+                    <p>
+                        Follow new vehicle announcements, launches,
+                        updates and upcoming models.
+                    </p>
+
+                    <a href="{{ url_for('cars') }}">
+                        Explore Cars →
+                    </a>
+
+                </article>
+
+
+                <!-- Electric Vehicles -->
+                <article class="news-category-card">
+
+                    <div class="news-category-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Electric Vehicles
+                    </h3>
+
+                    <p>
+                        Keep up with EV launches, electric technology,
+                        charging developments and the future of mobility.
+                    </p>
+
+                    <a href="{{ url_for('cars') }}?fuelType=Electric">
+                        Explore EVs →
+                    </a>
+
+                </article>
+
+
+                <!-- Automotive Technology -->
+                <article class="news-category-card">
+
+                    <div class="news-category-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        Automotive Technology
+                    </h3>
+
+                    <p>
+                        Discover developments in vehicle technology,
+                        safety systems, connectivity and innovation.
+                    </p>
+
+                    <a href="{{ url_for('cars') }}">
+                        Explore Vehicles →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Coming Soon -->
+        <section class="news-coming-soon">
+
+            <div class="coming-soon-card">
+
+                <span class="eyebrow">
+                    COMING SOON
+                </span>
+
+                <h2>
+                    MotorNation News
+                </h2>
+
+                <p>
+                    Our dedicated automotive news system is currently
+                    being developed. This section will eventually feature
+                    vehicle launches, manufacturer announcements, industry
+                    developments, EV news, automotive technology and other
+                    important stories from the automotive world.
+                </p>
+
+                <div class="coming-soon-actions">
+
+                    <a
+                        href="{{ url_for('cars') }}"
+                        class="primary-btn"
+                    >
+                        Explore Cars
+                    </a>
+
+                    <a
+                        href="{{ url_for('reviews') }}"
+                        class="secondary-btn"
+                    >
+                        Read Reviews
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</section>
+
+{% endblock %}
+```
